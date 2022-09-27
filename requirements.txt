@@ -6,3 +6,4 @@ django-js-asset==2.0.0
 Pillow==9.2.0
 qrcode==7.3.1
 sqlparse==0.4.2
+whitenoise==6.2.0
