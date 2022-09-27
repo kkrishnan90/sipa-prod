@@ -29,19 +29,19 @@
                    
         <div class="col-lg-12 text-left">
             <h2>{{sponsornote.title}}</h2>
-            <img src="{%get_media_prefix%}{{sponsornote.image}}" class="img-fluid" alt="" style="float:right;margin:0 15px 0 15px">             
+            <img src="{%get_media_prefix%}{{sponsornote.image}}" class="img-fluid mx-auto" alt="" style="float:right;margin:0 15px 0 15px">             
             <p>{{sponsornote.description}}
             </p>
           
         </div>
 
-        
+       
                          <!--== Job opportunity Wrapper ==-->
-      <div class="job-opportunity-wrapper">
+      <div class="job-opportunity-wrapper mx-auto" style="margin-top:20px;">
         <div class="row">           
           {%for sponsor in sponsorships%}
             <!--== Single Job opportunity Start ==-->
-            <div class="col-lg-4 col-sm-6 text-center">
+            <div class="col-lg-6 col-sm-6 text-center">
                 <div class="single-job-opportunity">
                     <div class="job-opportunity-text">
                         <div class="job-oppor-logo" style="height:100px !important;">
