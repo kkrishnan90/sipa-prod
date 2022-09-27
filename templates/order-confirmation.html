@@ -1,0 +1,24 @@
+{%load static%}
+{% load crispy_forms_tags %}
+{% csrf_token %} 
+{%include './home/preloader.html'%}
+  <body>
+  {%include './home/header.html'%}  
+  <div class="col-lg-6 col-sm-6 col-md-6 card shadow mx-auto m-4 p-3 text-center d-flex justify-content-center" style="background-color:#F8F8F8;">    
+    <img src="{%static 'assets/img/transparent-qr-bg.png'%}" class="img-fluid rounded mx-auto" style="max-height:50rem;
+    width:100%">
+   <span class="position-absolute w-100" style="margin-bottom:20rem;padding-right:20px;"> <img src="{{order.qr_code_img_url}}" id="pic2" class="img-fluid rounded mx-auto card-img-top w-25" alt="."></span>
+    <div class="card-body">
+      <h5 class="card-title">We welcome you to the event!</h5>
+      <p class="card-text">Hi, {{order.name}}!</p>
+      <p class="card-text">You have successfully registered for the event on {{order.event_date}}.<br/>
+        <span class="text-danger">Please take a screenshot of this QR code</span></p>
+    </div>
+  </div>
+</div>
+
+  </div>
+{%include './home/footer.html' %}
+{%include './home/sitescript.html'%}
+</body>
+</html>

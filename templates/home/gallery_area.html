@@ -1,0 +1,63 @@
+{%load static%}
+<!--== Gallery Area Start ==-->
+<section id="gallery-area" class="section-padding">
+  <div class="container">
+    <!--== Section Title Start ==-->
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="section-title">
+          <h2>Our gallery</h2>
+        </div>
+      </div>
+    </div>
+    <!--== Section Title End ==-->
+
+    <!--== Gallery Container Warpper ==-->
+    <div class="gallery-content-wrapper">
+      <div class="row">
+        <div class="col-lg-12">        
+          <!-- Gallery Item content Start -->
+          <div class="row gallery-gird">
+            <!-- Single Gallery Start -->
+            {% for photo in photos %}
+            <div class="col-lg-3 col-sm-6 recent event">
+              <div class="single-gallery-item gallery-bg-1" >
+                <img src="{%get_media_prefix%}{{photo.image}}" style="max-width:100% !important"/>
+                <div class="gallery-hvr-wrap">
+                  <div class="gallery-hvr-text">
+                    <h4>{{photo.title}}</h4>
+                    <p class="gallery-event-date">{{photo.created_on}}</p>
+                  </div>
+                  <a
+                    href="{%get_media_prefix%}{{photo.image}}"
+                    class="btn-zoom image-popup"
+                  >
+                  
+                    <img src="{%static 'assets/img/zoom-icon.png' %}" alt="a" style="max-width:100% !important"/>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Single Gallery End -->
+            {%endfor%}
+            {% comment %} <!-- Single Gallery Start -->
+            <div class="col-lg-3 col-sm-6 old event pic">
+              <div class="single-gallery-item video gallery-bg-2">
+                <a
+                  href="https://www.youtube.com/watch?v=crR9XoGVQqk&list=RDcrR9XoGVQqk&start_radio=1"
+                  class="btn btn-video-play video-popup"
+                  ><i class="fa fa-play"></i
+                ></a>
+              </div>
+            </div>
+            <!-- Single Gallery End --> {% endcomment %}
+
+          </div>
+          <!-- Gallery Item content End -->
+        </div>
+      </div>
+    </div>
+    <!--== Gallery Container Warpper==-->
+  </div>
+</section>
+<!--== Gallery Area End ==-->

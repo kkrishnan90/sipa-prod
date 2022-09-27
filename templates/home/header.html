@@ -1,0 +1,168 @@
+{%load static%}
+<!--== Header Area Start ==-->
+<header id="header-area">
+  <div class="preheader-area" style="background-color:#e74c3c;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-sm-7 col-7">
+          <div class="preheader-left" >
+            <a href="mailto:sipa@gmail.com"
+              ><strong>Email:</strong> {{contact.email}}</a
+            >
+            <a href="mailto:sipa@construc.com"
+              ><strong>Hotline:</strong> {{contact.phone}}</a
+            >            
+          </div>          
+        </div>       
+        <div class="col-lg-6 col-sm-5 col-5 text-right" style="text-align:center;">          
+          <div class="preheader-right text-right" style="margin-top:3%;">
+            Follow us on      <a href="https://www.facebook.com/Sipaisgreat"><i class="fa fa-facebook" style="color:white"></i> 
+              </a>  &         
+            <a href="https://www.youtube.com/channel/UCXb5lH7fL-z982-dOPKr35A"
+                  ><i class="fa fa-youtube" style="color:white"></i></a>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-bottom-area" id="fixheader">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="main-menu navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="{%url "home:home"%}">
+              <img
+                src="{%static 'assets/img/sipa-logo.png' %}"
+                alt="Logo"
+                style="height: 6rem; width: 4rem"
+              />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#menucontent"
+              aria-controls="menucontent"
+              aria-expanded="false"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menucontent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+                  <a class="nav-link" href="{%url "home:home"%}">Home</a>
+                </li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'about' %}active{% endif %}">
+                  <a class="nav-link" href="{%url "about:about"%}">About</a>
+                </li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'puja2022' %}active{% endif %}">
+                  <a class="nav-link" href="{%url "puja2022:puja2022"%}">Puja 2022</a>
+                </li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'events' %}active{% endif %}">
+                  <a class="nav-link" href="{%url "events:events"%}">Events</a>
+                </li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'gallery' %}active{% endif %}">
+                  <a class="nav-link" href="{%url "gallery:gallery"%}">Gallery</a>
+                </li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'sponsorship' %}active{% endif %}">
+                  <a class="nav-link" href="{%url "sponsorship:sponsorship"%}">Sponsorship</a>
+                </li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'resources' %}active{% endif %}">
+                  <a class="nav-link" href="{%url "resources:resources"%}">Resources</a>
+                </li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'latest-news' %}active{% endif %}">
+                  <a class="nav-link" href="{%url "home:latest-news"%}">Latest News</a>
+                </li>
+                
+                {% comment %} <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="blog.html"
+                    data-toggle="dropdown"
+                    role="button"
+                    >Blog</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li class="nav-item">
+                      <a class="nav-link" href="blog.html">Blog List</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="single-blog.html"
+                        >Single Blog Right Sidebar</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="single-blog-leftsidebar.html"
+                        >Single Blog left Sidebar</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="single-blog-withoutsidebar.html"
+                        >Single Blog No Sidebar</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    data-toggle="dropdown"
+                    role="button"
+                    >Pages</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li class="nav-item">
+                      <a
+                        class="nav-link dropdown-toggle"
+                        href="gallery.html"
+                        role="button"
+                        >Gallery</a
+                      >
+                      <ul class="dropdown-menu">
+                        <li class="nav-item">
+                          <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="single-album.html"
+                            >Single Album</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="committee.html">Committee</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="directory.html">Directory</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="career.html">Career</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="index-offcanvas.html"
+                        >Off Canvas Menu</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="typography.html">Typography</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li> {% endcomment %}
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!--== Header Area End ==-->

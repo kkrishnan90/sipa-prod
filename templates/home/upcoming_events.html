@@ -1,0 +1,67 @@
+{%load static%}
+<!--== Upcoming Event Area Start ==-->
+<section id="upcoming-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="upcoming-event-wrap">
+          <div class="up-event-titile">
+            <h3>Upcoming event</h3>
+          </div>
+          <div class="upcoming-event-content owl-carousel">
+            <!-- No 1 Event -->
+            {%for event in events%}
+            
+            <div class="single-upcoming-event">
+              <div class="row">
+                <div class="col-lg-5">
+                  <div class="up-event-thumb">
+                    <img
+                      src="{% get_media_prefix %}{{event.image}}"
+                      class="img-fluid"
+                      alt="Upcoming Event"
+                    />
+                    <h4 class="up-event-date">
+                      It&#x2019;s on {{event.date}}
+                    </h4>
+                  </div>
+                </div>
+
+                <div class="col-lg-7">
+                  <div class="display-table">
+                    <div class="display-table-cell">
+                      <div class="up-event-text">
+                        <div class="event-countdown">
+                          <div
+                            class="event-countdown-counter"
+                            data-date="{{event.formatted_date}}"
+                          ></div>
+                          
+                          <p>Remaining</p>
+                        </div>
+                        <h3>
+                          <a href="single-event.html">{{event.title}}</a>
+                        </h3>
+                        <p>{{event.description}}</p>
+                        <a
+                          href="single-event.html"
+                          class="btn btn-brand btn-brand-dark"
+                          >join with us</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- partial -->
+            {%endfor%}
+
+            <!-- partial -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--== Upcoming Event Area End ==-->

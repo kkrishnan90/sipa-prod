@@ -1,0 +1,27 @@
+{%load static%}
+{% load crispy_forms_tags %}
+
+{%include './home/preloader.html'%}
+  <body>
+  {%include './home/header.html'%}  
+  <div class="col-lg-6 col-sm-6 col-md-6 card shadow mx-auto m-4 p-3 text-center d-flex justify-content-center" style="background-color:#F8F8F8;">    
+    <div class="card-body">
+      <h5 class="card-title">Scanning success!</h5>
+      <img class='img-fluid' src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/White_check_mark_in_dark_green_rounded_square.svg/2048px-White_check_mark_in_dark_green_rounded_square.svg.png"
+      style="max-width:100px;max-height:100px;padding-bottom:20px;"/>
+      <ul class="list-group">
+        <li class="list-group-item">Name: {{order.name}}</li>
+        <li class="list-group-item">Email: {{order.email}}</li>
+        <li class="list-group-item">Phone: {{order.phone}}</li>
+        <li class="list-group-item">Family Count: {{order.family_count}}</li>
+        <li class="list-group-item">Prasad Count: {{order.prasad_count}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  </div>
+{%include './home/footer.html' %}
+{%include './home/sitescript.html'%}
+</body>
+</html>

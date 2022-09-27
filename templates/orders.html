@@ -1,0 +1,26 @@
+{%load static%}
+
+{%include './home/preloader.html'%}
+<body>
+  {%include './home/header.html'%}
+  <div class="card shadow col-lg-6 col-sm-10 col-md-6 mx-auto" style="margin:20rem 20rem; padding:5rem;">
+    <form method="post" novalidate>
+      {% csrf_token %}        
+      {% load crispy_forms_tags %}
+        {% crispy form form.helper %}
+        </form>
+        <style>             
+          #submit-id-submit{
+            height:4rem;
+            width:8rem;
+            font-size:1.5rem;
+          }
+         
+        </style>
+  </div>  
+ 
+{%include './home/footer.html' %}
+{%include './home/sitescript.html'%}
+</body>
+
+</html>
