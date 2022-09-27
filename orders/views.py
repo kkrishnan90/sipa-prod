@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from contact.models import Contact
 from home.models import  Footer
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from orders.models import NonMemberModel, OrderModel
 from django.core.files import File
@@ -39,8 +40,8 @@ def renderOrderForm(request):
 def addVisitConfirmation(request,csrf_token=None):
     footer_content = Footer.objects.first()
     contact = Contact.objects.latest('created_on')
-    order = OrderModel.objects.get(csrf_token=csrf_token)
-    print(order)
+    OrderModel.objects.filter(csrf_token=csrf_token).update(is_verified=True)
+    order = OrderModel.objects.get(csrf_token=csrf_token)    
     return render(request, 'scan-success.html',{'footer':footer_content,'contact':contact,'order':order})
 
 def orderSuccess(request,csrf_token=None):

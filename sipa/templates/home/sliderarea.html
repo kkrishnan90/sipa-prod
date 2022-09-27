@@ -1,0 +1,42 @@
+{%load static%}
+<!--== Slider Area Start ==-->
+<section id="slider-area">
+  <div class="slider-active-wrap owl-carousel text-center text-md-left">
+    <!-- Single Slide Item Start -->
+    {% for slider in sliders %}
+    <div class="single-slide-wrap slide-bg-1" style="background:url({% get_media_prefix %}{{slider.image}});background-color: #cccccc;background-repeat: no-repeat;
+    background-size: 100% 100%;">
+      <div class="container" >
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="slider-content">
+              <h2>{{slider.title}}</h2>
+              <h3>{{slider.sub_title}}</span></h3>
+              <p>
+                {{slider.description}}
+              </p>             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Single Slide Item End -->
+    {%endfor%}
+  </div>
+
+  <!-- Social Icons Area Start -->
+  <div class="social-networks-icon">
+    <ul>
+      <li>
+        <a href="https://www.facebook.com/Sipaisgreat"><i class="fa fa-facebook"></i> <span>Follow us on Facebook</span></a>
+      </li>      
+      <li>
+        <a href="https://www.youtube.com/channel/UCXb5lH7fL-z982-dOPKr35A"
+          ><i class="fa fa-youtube"></i> <span>SIPA YouTube Channel</span></a
+        >
+      </li>
+    </ul>
+  </div>
+  <!-- Social Icons Area End -->
+</section>
+<!--== Slider Area End ==-->

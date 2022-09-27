@@ -12,6 +12,7 @@ class OrderModel(models.Model):
     family_count = models.PositiveIntegerField()
     prasad_count = models.PositiveIntegerField()
     phone = models.CharField(max_length=30)
+    is_verified = models.BooleanField(default=False)
     created_on = models.DateField(auto_now_add=True)
 
 

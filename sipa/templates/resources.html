@@ -1,0 +1,17 @@
+{%load static%}
+{%include './home/preloader.html'%}
+  <body>
+  {%include './home/header.html'%}
+  <div class="container" id="parent_container" style="padding:10px;padding-bottom:30px;">
+    {{resource.description|safe}}
+   
+  </div>
+  {%include './home/footer.html' %}
+  {%include './home/sitescript.html'%}
+  <script>
+    $(document).ready(function(){ 
+      $("img").addClass("img-fluid");
+});
+  </script>
+  </body>  
+</html>

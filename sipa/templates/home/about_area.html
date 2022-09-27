@@ -1,0 +1,53 @@
+{%load static %}
+<!--== About Area Start ==-->
+<section id="about-area" class="section-padding">
+  <div class="about-area-wrapper" >
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 ml-auto" >
+            <div class="card shadow" style="margin-top:10px;">
+              <img class="card-img-top" src="https://img.freepik.com/free-vector/loudspeaker-megaphone-with-lightings-red_1284-58706.jpg" 
+              alt="Card image cap" style="background-color:#cccccc;height:50%;width:100%;object-fit:cover;">
+              <div class="card-body">
+                <h5 class="card-title">{{announcement.title}}</h5>
+                <p class="card-text">{{announcement.description}}</p>                
+              </div>
+            </div>            
+        </div>
+        <div class="col-lg-8 ml-auto">                    
+          <div class="about-content-wrap" style="padding:12px">
+            <div class="section-title text-center text-lg-left">     
+                                  
+              <h2>{{mission.title}}</h2>  
+              <div style="display:flex;">
+                <div class="flex-item" style="flex-grow:0.5">
+              <img
+                style="padding:12px;top:30px"
+                src="{%get_media_prefix%}{{mission.left_image}}"
+                alt=""
+                class="img-fluid"
+              /> 
+            </div>
+            <div class="flex-item" style="flex-grow:0.5">
+              <img
+              style="padding:12px;top:30px"
+              src="{%get_media_prefix%}{{mission.right_image}}"
+              alt=""
+              class="img-fluid"
+            />   
+          </div>
+          </div>                          
+            </div>            
+            <p>
+             {{mission.description}}
+            </p>               
+            <a href="{%url 'about:about'%}" class="btn btn-brand about-btn"
+              >know more</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--== About Area End ==-->
