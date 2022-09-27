@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bm@o47xyg3l=^k4c9em+&m@o&eempg%o-tqff(*usks#wpy*4%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sipa',
     'ckeditor',
     'about',
     'contact',
@@ -134,30 +133,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-# PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
-
-# Extra places for collectstatic to find static files.
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+VENV_PATH = os.path.dirname(BASE_DIR)
+STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATIC_URL = 'static/'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-
-# STATIC_URL = 'static/'
-# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static_root')
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-# VENV_PATH = os.path.dirname(BASE_DIR)
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static/'),
-# )
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -165,8 +149,10 @@ STATICFILES_FINDERS = (
 )
 
 # Base url to serve media files
+MEDIA_URL = '/media/'
 # Path where media is stored
-CSRF_TRUSTED_ORIGINS = ['*']
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+CSRF_TRUSTED_ORIGINS = ['https://3873-2405-201-e011-b0b1-dd84-d0b5-99b3-bea6.ngrok.io']
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
