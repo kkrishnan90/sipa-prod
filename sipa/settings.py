@@ -151,6 +151,7 @@ STATICFILES_FINDERS = (
 
 # Base url to serve media files
 MEDIA_URL = '/media/'
+
 # Path where media is stored
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 CSRF_TRUSTED_ORIGINS = ['https://3873-2405-201-e011-b0b1-dd84-d0b5-99b3-bea6.ngrok.io']
