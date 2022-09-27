@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sipa',
     'ckeditor',
     'about',
     'contact',
@@ -152,7 +153,7 @@ STATICFILES_FINDERS = (
 MEDIA_URL = '/media/'
 # Path where media is stored
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-CSRF_TRUSTED_ORIGINS = ['*','https://3873-2405-201-e011-b0b1-dd84-d0b5-99b3-bea6.ngrok.io']
+CSRF_TRUSTED_ORIGINS = ['*']
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
