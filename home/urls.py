@@ -7,8 +7,7 @@ from home.views import  getHomePageDetails,getLatestNews
 app_name = 'home'
 urlpatterns = [
     path('',view=getHomePageDetails,name='home'),
-    path('/',view=getHomePageDetails,name='home'),
-    path('/latest-news',view=getLatestNews,name='latest-news'),
+    path('latest-news',view=getLatestNews,name='latest-news'),
 
 ]
 if settings.DEBUG:
