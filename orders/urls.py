@@ -3,7 +3,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-from orders.views import   orderSuccess, renderOrderForm, addVisitConfirmation, testing
+from orders.views import   orderSuccess, renderOrderForm, addVisitConfirmation
 app_name = 'orders'
 urlpatterns = [
     path(r'/^$',view=renderOrderForm,name='orders'),
