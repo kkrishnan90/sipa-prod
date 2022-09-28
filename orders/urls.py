@@ -9,7 +9,6 @@ urlpatterns = [
     path(r'/^$',view=renderOrderForm,name='orders'),
     path(r'/success/<csrf_token>',view=orderSuccess,name='success'),
     path(r'/confirmation/<csrf_token>',view=addVisitConfirmation,name='confirmation'),
-    path(r'/test/<id>/',view=testing,name='testing'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

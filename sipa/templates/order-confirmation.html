@@ -9,10 +9,10 @@
     width:100%">
    <span class="position-absolute w-100" style="margin-bottom:20rem;padding-right:20px;"> <img src="{{order.qr_code_img_url}}" id="pic2" class="img-fluid rounded mx-auto card-img-top w-25" alt="."></span>
     <div class="card-body">
-      <h5 class="card-title">We welcome you to the event!</h5>
-      <p class="card-text">Hi, {{order.name}}!</p>
-      <p class="card-text">You have successfully registered for the event on {{order.event_date}}.<br/>
-        <span class="text-danger">Please take a screenshot of this QR code</span></p>
+      <h5 class="card-title text-danger" >We welcome you to the event!</h5>
+      <p class="card-text text-danger text-capitalize">Hello, <strong>{{order.name}}!</strong></p>
+      <p class="card-text text-danger">You have successfully registered for the event <strong>"{{order.event_name}}"</strong> on <strong>{{order.event_date}}</strong>.<br/>
+        <span class="text-danger"><strong>Please take a screenshot of this QR code</strong></span></p>
     </div>
   </div>
 </div>

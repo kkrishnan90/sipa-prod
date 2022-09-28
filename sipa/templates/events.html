@@ -45,7 +45,7 @@
                                                 </div>
                                                 <h3><a href="{% url 'orders:orders'%}?event_date={{event.formatted_date}}">{{event.title}}</a></h3>
                                                 <p>{{event.description}}</p>
-                                                <a href="{% url 'orders:orders'%}?event_date={{event.formatted_date}}" class="btn btn-brand btn-brand-dark">join with us</a>
+                                                <a href="{% url 'orders:orders'%}?event={{event.title}}&event_date={{event.formatted_date}}" class="btn btn-brand btn-brand-dark">join with us</a>
                                             </div>
                                         </div>
                                     </div>

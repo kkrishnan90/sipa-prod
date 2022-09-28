@@ -24,9 +24,8 @@ def renderOrderForm(request):
     contact = Contact.objects.latest('created_on')
     form = OrderNonMemberForm(request.POST)
     event_date = request.GET['event_date']
-    
+    event = request.GET['event']
     if request.method == 'POST':
-        print('Request coming from SUBMIT POST')        
         form = OrderNonMemberForm(request.POST) 
         # print(form.errors)
         if form.is_valid():                    
@@ -35,7 +34,7 @@ def renderOrderForm(request):
                 return HttpResponseRedirect(reverse('orders:success',kwargs={'csrf_token':form.data.get('csrfmiddlewaretoken')}))             
     else:
         form = OrderNonMemberForm()
-    return render(request, 'orders.html',{'form':form,'footer':footer_content,'contact':contact,'event_date':event_date})
+    return render(request, 'orders.html',{'form':form,'footer':footer_content,'contact':contact,'event_date':event_date,'event':event})
 
 def addVisitConfirmation(request,csrf_token=None):
     footer_content = Footer.objects.first()
@@ -61,10 +60,6 @@ def generateQRAndSave(request,form):
     img.save("{}{}".format(temp_save_dir,file_name))            
     image_url = "http://{}{}{}{}".format(request.get_host(),settings.MEDIA_URL,'orders/',file_name)            
     OrderModel.objects.update_or_create(csrf_token = form.data.get('csrfmiddlewaretoken'),name=form.data.get('name'),
-    email=form.data.get('email'),event_date=request.GET['event_date'],
+    email=form.data.get('email'),event_date=request.GET['event_date'],event_name=request.GET['event'],
     qr_code_img_url=image_url,family_count=form.data.get('family_count'),prasad_count=form.data.get('prasad_count'),phone=form.data.get('phone'))
     return True
-
-def testing(request,id):
-    data = id
-    return render(request,'testing.html',{'data':data})
