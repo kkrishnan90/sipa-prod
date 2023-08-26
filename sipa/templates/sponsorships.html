@@ -27,9 +27,9 @@
                 <div class="container">
 
                    
-        <div class="col-lg-12 text-left">
+        <div class="col-lg-10 text-left">
             <h2>{{sponsornote.title}}</h2>
-            <img src="{%get_media_prefix%}{{sponsornote.image}}" class="img-fluid mx-auto" alt="" style="float:right;margin:0 15px 0 15px">             
+            <img src="{%get_media_prefix%}{{sponsornote.image}}" class="img-fluid mx-auto" alt="" style="float:right;padding:15px;">             
             <p>{{sponsornote.description}}
             </p>
           
@@ -41,11 +41,11 @@
         <div class="row">           
           {%for sponsor in sponsorships%}
             <!--== Single Job opportunity Start ==-->
-            <div class="col-lg-6 col-sm-6 text-center">
+            <div class="col-lg-6 col-sm-6 text-center d-flex justify-content-around">
                 <div class="single-job-opportunity">
                     <div class="job-opportunity-text">
-                        <div class="job-oppor-logo" style="height:100px !important;">
-                            <img src="{%get_media_prefix%}{{sponsor.image}}" alt="Job" style="min-width:80%;object-fit:cover;max-height:150px !important">
+                        <div class="job-oppor-logo mx-auto" style="height:100px !important;">
+                            <img class="img-fluid mx-auto" src="{%get_media_prefix%}{{sponsor.image}}" alt="Job" style="min-width:80%;object-fit:cover;max-height:150px !important">
                         </div>
                         <h3 style="padding-top:50px;padding-bottom:1px;"><a href="#">{{sponsor.title}}</a></h3>
                         <p style="padding-top:0px;">{{sponsor.description}}</p>

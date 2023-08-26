@@ -48,14 +48,21 @@
     <!-- facebook open graph ends here -->
 
     <!-- desktop bookmark -->
+    {% comment %}
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta
       name="msapplication-TileImage"
       content="{%static 'assets/img/favicon/ms-icon-144x144.png' %}"
     />
+    {% endcomment %}
     <meta name="theme-color" content="#ffffff" />
-
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{%static 'assets/img/favicon.ico' %}"
+    />
     <!-- icons & favicons -->
+    {% comment %}
     <link
       rel="shortcut icon"
       type="image/x-icon"
@@ -152,6 +159,7 @@
       type="image/x-icon"
       href="{%static 'assets/img/favicon.ico' %}"
     />
+    {% endcomment %}
 
     <!-- Fallback For IE 9 [ Media Query and html5 Shim] -->
     <!--[if lt IE 9]>
@@ -221,7 +229,9 @@
       data-layout="1"
       rel="stylesheet"
       href="{%static 'assets/css/style-red.min.css' %}"
-      {% comment %} href="{%static 'assets/css/style-default.min.css' %}" {% endcomment %}
       media="all"
     />
+    <!-- Gen App Builder widget bundle -->
+<script src="https://cloud.google.com/ai/gen-app-builder/client"></script>
   </head>
+</html>

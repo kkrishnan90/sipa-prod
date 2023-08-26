@@ -19,7 +19,7 @@ class OrderNonMemberForm(forms.ModelForm):
         self.helper = FormHelper(self)
         self.helper.layout = Layout(
             Fieldset(
-                'You are registering for the event to be held on {{event_date}}',                
+                'You are registering for the event "{{event}}" to be held on {{event_date}}',                
                 'name',
                 'email',
                 'phone',

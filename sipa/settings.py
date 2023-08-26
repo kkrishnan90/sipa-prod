@@ -155,3 +155,6 @@ CSRF_TRUSTED_ORIGINS = ['https://3873-2405-201-e011-b0b1-dd84-d0b5-99b3-bea6.ngr
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True

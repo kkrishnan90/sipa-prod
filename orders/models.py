@@ -8,6 +8,7 @@ class OrderModel(models.Model):
     name = models.CharField(max_length=300)
     email = models.EmailField()
     event_date = models.CharField(max_length=100)
+    event_name = models.CharField(max_length=300)
     qr_code_img_url = models.URLField(max_length=1000)
     family_count = models.PositiveIntegerField()
     prasad_count = models.PositiveIntegerField()

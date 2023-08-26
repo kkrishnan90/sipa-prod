@@ -1,77 +1,59 @@
-{%load static%}
-{%include './home/preloader.html'%}
-  <body>
+{%load static%} {%include './home/preloader.html'%}
+<body>
   {%include './home/header.html'%}
-<!--== Page Title Area Start ==-->
-<section id="page-title-area">
+  <!--== Page Title Area Start ==-->
+  <section id="page-title-area">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 m-auto text-center">
-                <div class="page-title-content">
-                    <h1 class="h2">About Us</h1>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-lg-8 m-auto text-center">
+          <div class="page-title-content">
+            <h1 class="h2">About Us</h1>
+          </div>
         </div>
+      </div>
     </div>
-</section>
-<!--== Page Title Area End ==-->
+  </section>
+  <!--== Page Title Area End ==-->
 
-<!--== Committee Page Content Start ==-->
-<section id="page-content-wrap">
+  <!--== Committee Page Content Start ==-->
+  <section id="page-content-wrap">
     <div class="about-page-content-wrap section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-11 m-auto">
-                    <!-- Single about text start -->
-                    {% for about in abouts%}
-                    <div class="single-about-text">
-                        <span class="year" style="color:red;float:right">{{about.year}}</span>
-                        <img src="{%get_media_prefix%}{{about.image}}" alt="About" class="img-fluid img-left">
-                        <h2 class="h3">{{about.title}}</h2>
-                        <p>{{about.description}}</p>
-                    </div>
-                    <style>
-                        #page-content-wrap .about-page-content-wrap .single-about-text:nth-child(2n) .year{
-                            right:0px;
-                            left:auto;
-                        }
-                    </style>
-                    <!-- Single about text End -->
-                    {%endfor%}
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-11 m-auto">
+            <!-- Single about text start -->
+            {% for about in abouts%}
+            <div class="single-about-text">
+              <span class="year" style="color: red; float: right"
+                >{{about.year}}</span
+              >
+              <img
+                src="{%get_media_prefix%}{{about.image}}"
+                alt="About"
+		style="filter:none"
+                class="img-fluid img-left"
+              />
+              <h2 class="h3" style="color: red">{{about.title}}</h2>
+              <p>{{about.description}}</p>
             </div>
+            <style>
+              #page-content-wrap
+                .about-page-content-wrap
+                .single-about-text:nth-child(2n)
+                .year {
+                right: 0px;
+                left: auto;
+              }
+            </style>
+            <!-- Single about text End -->
+            {%endfor%}
+          </div>
         </div>
+      </div>
     </div>
 
-  {%include './home/funfact_area.html'%}
-
-    <div class="our-honorable-commitee section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="about-page-area-title">
-                        <h2>Our Honorable Committe</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="honorable-committee-list">
-                <div class="row">
-                    {%for member in committee_members%}
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-committee-member">
-                            <div class="commitee-thumb">
-                                <img src="{%get_media_prefix%}{{member.image}}" class="img-fluid" alt="Committee">
-                            </div>
-                            <h3>{{member.name}}<span class="committee-deg">{{member.designation}}</span></h3>
-                        </div>
-                    </div>   
-                    {%endfor%}                
-                </div>                
-            </div>
-        </div>
-    </div>    
-</section>
-<!--== Committee Page Content End ==-->
-{%include './home/footer.html' %}
-{%include './home/sitescript.html'%}
+    {%include './home/funfact_area.html'%}
+  </section>
+  <!--== Committee Page Content End ==-->
+  {%include './home/footer.html' %} {%include './home/sitescript.html'%}
+</body>
