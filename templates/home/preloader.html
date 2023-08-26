@@ -220,8 +220,15 @@
       id="cbx-style"
       data-layout="1"
       rel="stylesheet"
-      href="{%static 'assets/css/style-red.min.css' %}"
-      {% comment %} href="{%static 'assets/css/style-default.min.css' %}" {% endcomment %}
+      href="{%static 'assets/css/style-red.min.css' %}?version=2"
+      {%
+      comment
+      %}
+      href="{%static 'assets/css/style-default.min.css' %}"
+      {%
+      endcomment
+      %}
       media="all"
     />
   </head>
+</html>
