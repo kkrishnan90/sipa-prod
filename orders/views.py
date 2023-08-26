@@ -64,6 +64,7 @@ def generateQRAndSave(request,form):
     OrderModel.objects.update_or_create(csrf_token = form.data.get('csrfmiddlewaretoken'),name=form.data.get('name'),
     email=form.data.get('email'),event_date=request.GET['event_date'],event_name=request.GET['event'],
     qr_code_img_url=image_url,family_count=form.data.get('family_count'),prasad_count=form.data.get('prasad_count'),phone=form.data.get('phone'))
+<<<<<<< HEAD
     return True
 
 def exportcsv(request):
@@ -76,3 +77,6 @@ def exportcsv(request):
     for ord in ords:
         writer.writerow(ord)
     return response
+=======
+    return True
+>>>>>>> ece432e038afc9466938c992c094e58f0b78e574
